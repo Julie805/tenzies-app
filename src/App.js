@@ -9,6 +9,7 @@ export default function App() {
     const [tenzies, setTenzies] = React.useState(false)
     const [count, setCount] = React.useState(1)
     
+
     React.useEffect(() => {
         const allHeld = dice.every(die => die.isHeld)
         const firstValue = dice[0].value
@@ -33,11 +34,6 @@ export default function App() {
         }
         return newDice
     }
-    
-/**
- * Challenge: Allow the user to play a new game when the
- * button is clicked and they've already won
- */
     
     function rollDice() {
         if(!tenzies) {
@@ -75,7 +71,6 @@ export default function App() {
         <main>
             {tenzies && <Confetti />}
             <h1 className="title">Tenzies</h1>
-            <h3 className="time">Current time: 00:00</h3>
             <p className="instructions">Roll until all dice are the same.
             Click each die to freeze it at its current value between rolls.</p>
             <div className="dice-container">
